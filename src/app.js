@@ -5,8 +5,8 @@ const { createConnection } = require('typeorm');
 
 // rotas
 const userRoutes = require('./routes/userRoutes');
-//const productRoutes = require('./routes/productRoutes');
-// se tiver rotas de pedidos e endereços, adicione aqui também futuramente
+const productRoutes = require('./routes/productRoutes');
+const orderRoutes = require('./routes/orderRoutes')
 
 const app = express();
 
@@ -23,7 +23,8 @@ app.use(express.json());
 
 // rotas
 app.use('/api/users', userRoutes);
-//app.use('/api/products', productRoutes);
+app.use('/api/products', productRoutes);
+app.use('/api/orders', orderRoutes);
 
 createConnection({
   type: 'postgres',
