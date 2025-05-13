@@ -125,14 +125,56 @@ Esses são os requisitos iniciais definidos para o projeto. Conforme o desenvolv
 
 ### Modelagem do Sistema
 
+Para representar a estrutura e o comportamento do sistema, foram utilizados os seguintes diagramas:
+
+- **Diagrama de Casos de Uso (UML)**  
+  Representa os principais atores do sistema (cliente, administrador) e suas interações com o sistema. Auxilia na identificação e comunicação dos requisitos funcionais.
+
+- **Modelo Entidade-Relacionamento (MER)**  
+  Modela a estrutura do banco de dados, identificando as entidades principais e os relacionamentos entre elas, como: `Usuário`, `Produto`, `Pedido`, `Endereço`, entre outros.
+
+Os diagramas foram desenvolvidos utilizando a ferramenta [Draw.io](https://app.diagrams.net/) pela sua praticidade e colaboração em tempo real.
+
+> **Imagens dos Diagramas**  
+> 
+> ![MER](https://github.com/user-attachments/assets/9f8ab000-96b5-4e53-9623-1af5c5dd59fd)
+>
+> ![caso de uso](https://github.com/user-attachments/assets/c2ed9b0d-48aa-423f-b7dd-353e7593472e)
+
+
 
 ### Tecnologias Utilizadas
 
+| Tecnologia       | Tipo                    | Descrição                                                                 |
+|------------------|-------------------------|---------------------------------------------------------------------------|
+| **JavaScript**   | Linguagem               | Utilizada no backend e frontend.                                          |
+| **Node.js + Express** | Framework Backend   | Criação da API RESTful.                                                  |
+| **React**        | Biblioteca Frontend     | Construção da interface do usuário.                                       |
+| **PostgreSQL**   | Banco de Dados          | Armazenamento de produtos, pedidos, usuários, etc.                        |
+| **TypeORM**      | ORM                     | Mapeamento objeto-relacional no backend.                                  |
+| **Bcrypt**       | Biblioteca               | Criptografia de senhas.                                                  |
+| **JWT**          | Biblioteca               | Autenticação baseada em token.                                           |
+| **Dotenv**       | Biblioteca               | Gerenciamento de variáveis de ambiente.                                  |
+| **Figma**        | Ferramenta de Design    | Criação de protótipos de interface.                                       |
+| **Draw.io / Lucidchart** | Ferramentas de Modelagem | Criação de diagramas UML e MER.                                  |
+
+---
 
 ### Arquitetura do Sistema
 
+O sistema segue a arquitetura padrão de **cliente-servidor**, separada em três camadas:
 
----
+1. **Frontend (React)**  
+   Interface que interage com o usuário final. Responsável por consumir a API e exibir dados de forma intuitiva.
+
+2. **Backend (Express/Node.js)**  
+   Responsável pelas regras de negócio, autenticação, persistência de dados e respostas à interface.
+
+3. **Banco de Dados (PostgreSQL)**  
+   Armazena as informações de usuários, produtos, pedidos e endereços.
+
+> **Diagrama da Arquitetura (Fluxo de Dados)**  
+> ![Diagrama da Arquitetura](https://github.com/user-attachments/assets/688b8d23-6095-4b91-929a-b5c4c242f419)
 
 ## 7. Resultados
 
@@ -148,8 +190,23 @@ Esses são os requisitos iniciais definidos para o projeto. Conforme o desenvolv
 
 ### Impacto do Sistema
 
+O sistema desenvolvido atendeu aos principais objetivos definidos no início do projeto, proporcionando à cliente a possibilidade de gerenciar sua loja virtual de forma prática e intuitiva.  
+Com a plataforma, foi possível:
+
+- Ampliar o alcance da loja para o meio digital, permitindo que mais pessoas da cidade conhecessem os produtos.
+- Facilitar o processo de cadastro e gerenciamento de produtos, mesmo para uma usuária com pouca familiaridade com tecnologia.
+- Oferecer uma experiência de compra simples e agradável para os consumidores, com um catálogo organizado e um fluxo de compra claro.
+
+A implementação do sistema trouxe mais autonomia e eficiência para a gestão da loja, contribuindo para o aumento das vendas e da visibilidade no mercado local.
 
 ### Melhorias Futuras
+
+Embora o sistema entregue as funcionalidades essenciais previstas no escopo, algumas melhorias podem ser consideradas em futuras versões para aprimorar ainda mais a experiência:
+
+- **Integração com sistemas de pagamento online** (ex.: PIX, cartão de crédito) para facilitar as transações.
+- **Sistema de controle de estoque**, com alertas de baixo estoque.
+- **Integração com serviços de entrega**, como cálculo de frete automático e rastreamento de pedidos.
+- **Criação de um módulo de relatórios** para acompanhar vendas, faturamento e desempenho dos produtos.
 
 
 ---
