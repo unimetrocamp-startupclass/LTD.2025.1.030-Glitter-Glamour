@@ -180,10 +180,226 @@ O sistema segue a arquitetura padrão de **cliente-servidor**, separada em três
 
 ###  Protótipo
 
+O frontend do sistema ainda está em construção. A seguir, apresentamos a estrutura planejada das principais telas da aplicação, que serão implementadas nas próximas etapas do projeto. As imagens dos protótipos serão adicionadas assim que estiverem disponíveis.
+
+---
+
+#### Página Inicial
+
+- Exibe os produtos em destaque e o catálogo geral.
+- Usuários poderão clicar em um produto para ver mais detalhes.
+- Terá menu de navegação com acesso ao carrinho e login.
+
+> *(Imagem em breve)*
+
+---
+
+#### Página de Detalhes do Produto
+
+- Mostrará as informações completas do produto selecionado.
+- O usuário poderá escolher o tamanho e a quantidade desejada.
+- Permitirá adicionar o item ao carrinho de compras.
+
+> *(Imagem em breve)*
+
+---
+
+#### Carrinho de Compras
+
+- Listará os produtos selecionados pelo usuário.
+- Permitirá alterar a quantidade ou remover produtos.
+- Exibirá o valor total do pedido e botão para finalizar.
+
+> *(Imagem em breve)*
+
+---
+
+#### Painel Administrativo (Cliente)
+
+- Acesso restrito via login.
+- Permitirá adicionar, editar e remover produtos.
+- Exibirá uma lista com os pedidos recebidos.
+
+> *(Imagem em breve)*
+
 
 ### Códigos das Principais Funcionalidades
 
+Abaixo estão os principais trechos de código do backend da aplicação, implementados com Node.js, Express e TypeORM, divididos entre **services** e **controllers** para manter a separação de responsabilidades e com explicações breves.
 
+---
+### 📌 Registro de Usuário com Endereço Integrado
+
+```js
+// services/users/userCreate.service.js
+
+const userService = {
+  async register(username, password, confirmPassword, email, cpf, cellphone, addressData, is_adm = false) {
+    const userRepository = getRepository(UserSchema);
+    const addressRepository = getRepository(AddressSchema);
+
+    if (password !== confirmPassword) {
+      throw new Error('As senhas não coincidem');
+    }
+
+    const existingUser = await userRepository.findOne({ where: { email } });
+    if (existingUser) {
+      throw new Error('Usuário com esse email já existe');
+    }
+
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    const newUser = userRepository.create({
+      username,
+      password: hashedPassword,
+      email,
+      cpf,
+      cellphone,
+      is_adm
+    });
+
+    await userRepository.save(newUser);
+
+    const newAddress = addressRepository.create({
+      ...addressData,
+      user: newUser
+    });
+
+    await addressRepository.save(newAddress);
+
+    return { message: 'Usuário criado com sucesso', user: newUser, address: newAddress };
+  }
+};
+```
+- Cria um novo usuário com senha criptografada, verificações básicas e já associa um endereço à conta.
+
+---
+
+### 📌 Login com Geração de Token JWT
+
+```js
+// services/users/userCreate.service.js
+
+async login(username, password) {
+  const userRepository = getRepository(UserSchema);
+  const user = await userRepository.findOne({ where: { username } });
+
+  if (!user) {
+    throw new Error('Usuário não encontrado');
+  }
+
+  const isMatch = await bcrypt.compare(password, user.password);
+  if (!isMatch) {
+    throw new Error('Senha incorreta');
+  }
+
+  const token = jwt.sign(
+    { id: user.id, username: user.username, is_adm: user.is_adm },
+    'sua_chave_secreta',
+    { expiresIn: '1h' }
+  );
+
+  return { message: 'Login bem-sucedido', token, user: { id: user.id, username: user.username, is_adm: user.is_adm } };
+}
+
+```
+
+- Valida credenciais do usuário e gera um token JWT com validade de 1 hora.
+
+---
+
+### 📌 Criação de Produto com Verificação de Categoria
+
+```js
+// services/products/productCreate.service.js
+
+const productCreateService = {
+  async createProduct(productname, price, description, detail, is_newArrivals, size, cover_image, first_image, second_image, third_image, category) {
+    if (![1, 2, 3, 4].includes(category)) {
+      throw new Error('A categoria deve ser um número entre 1 e 4.');
+    }
+
+    const productRepository = getRepository(ProductSchema);
+
+    const newProduct = productRepository.create({
+      productname,
+      price,
+      description,
+      detail,
+      is_newArrivals,
+      size,
+      cover_image,
+      first_image,
+      second_image,
+      third_image,
+      category,  
+    });
+
+    await productRepository.save(newProduct);
+
+    return { message: 'Produto criado com sucesso', product: newProduct };
+  }
+};
+
+```
+- Registra um novo produto no banco de dados, incluindo múltiplas imagens e categoria validada
+
+---
+
+### 📌 Criação de Pedido com Itens Relacionados
+
+```js
+// services/orders/orderCreate.service.js
+
+const orderCreateService = {
+  async createOrder(userId, addressId, items) {
+    const user = await getRepository(UserSchema).findOne({ where: { id: userId } });
+    if (!user) throw new Error('Usuário não encontrado.');
+
+    const address = await getRepository(AddressSchema).findOne({ where: { id: addressId } });
+    if (!address) throw new Error('Endereço não encontrado.');
+
+    const orderRepository = getRepository(OrderSchema);
+    const orderItemRepository = getRepository(OrderItemSchema);
+    const productRepository = getRepository(ProductSchema);
+
+    let total = 0;
+
+    const newOrder = orderRepository.create({ user, address, total: 0, items: [] });
+    await orderRepository.save(newOrder);
+
+    const orderItems = [];
+
+    for (const item of items) {
+      const product = await productRepository.findOne({ where: { id: item.productId } });
+      if (!product) throw new Error(`Produto com ID ${item.productId} não encontrado.`);
+
+      const orderItem = orderItemRepository.create({
+        order: newOrder,
+        product,
+        quantity: item.quantity,
+        price: product.price,
+      });
+
+      await orderItemRepository.save(orderItem);
+      orderItems.push(orderItem);
+
+      total += parseFloat(product.price) * item.quantity;
+    }
+
+    newOrder.total = total;
+    newOrder.items = orderItems;
+
+    await orderRepository.save(newOrder);
+
+    return { message: 'Pedido criado com sucesso', order: newOrder };
+  }
+};
+
+```
+
+- Cria um pedido vinculado a um usuário e endereço, calcula o total com base nos produtos e salva os itens.
+  
 ---
 
 ## 8. Conclusão
