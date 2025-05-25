@@ -439,34 +439,48 @@ Embora o sistema entregue as funcionalidades essenciais previstas no escopo, alg
 
 ## 10. Divulgação
 
-### Perfil no LinkedIn do Projeto
+### Artigo no LinkedIn 
 
+![artigo angelica](https://github.com/user-attachments/assets/e36a2525-9c8d-420e-b341-333a496c703d)
 
-### Vídeo da Apresentação (Seminário de Projetos)
+🔗 [Link do artigo](https://www.linkedin.com/posts/angelica-moreira_activity-7328888905041182720-xKSx?utm_source=share&utm_medium=member_desktop&rcm=ACoAADquB1ABskEsBroC5FzB_RxUJSt5Njf7pCg)
+
+**Perfil da Aluna 2**  
+![artigo kelliane](https://github.com/user-attachments/assets/be7a7b44-b941-4aaa-8aca-d4adca9b04b8)
+
+🔗 [Link do artigo](https://www.linkedin.com/posts/kelliane-vieira_activity-7331463119627616256-KIOb?utm_source=share&utm_medium=member_desktop&rcm=ACoAADquB1ABskEsBroC5FzB_RxUJSt5Njf7pCg)
+
 
 
 
 #### Fotos da Apresentação
-
+| Foto | Legenda |
+|------|---------|
+| ![Foto 1](https://github.com/user-attachments/assets/0e0c12d4-1a1c-4fe6-bf68-021a3dc926ba)| Da esquerda para a direita: Kelliane e Angelica – apresentação do artigo |
+| ![Foto 2](https://github.com/user-attachments/assets/28e56bf5-13a6-46dc-ba0b-5e64b0133842)| Kelliane - Slide de introdução ao fundo |
+| ![Foto 3](https://github.com/user-attachments/assets/6b73e2f2-5176-4936-b5ac-f435cb7665e9)| Visão geral da sala – apresentação de frente para o fundo |
+| ![Foto 4](https://github.com/user-attachments/assets/cb9ca08a-10a3-4303-ae8f-09d38f7d748d)| Visão geral da sala – apresentação do fundo para a frente |
 
 
 ### Lista de Presença
 
+| Nome Completo                   | Matrícula          |
+|--------------------------------|---------------------|
+| João Paulo da Silva Júnior     | 202402531409        |
+| João Victor Romagnóli Vendito  | 202402531425        |
+| João Lucas Las Casas Alves     | 202208700471        |
+| Vinicius Mastrangelo Dias      | 202208700438        |
+| Angelica Maria Zaule Moreira   | 202402395394        |
+| Kelliane Vieira dos Santos     | 202402410581        |
+| Marcelo Jeronimo de Oliveira   | 202209188676        |
+| Matheus Girardi de Oliveira    | 202208700462        |
+| Camila Marinho Dourado         | 20240239383920      |
+| Gustavo Ian Gonçalves Tavares  | 202404410196        |
+| Giovanni Garcia de Souza       | 202102636728        |
+| Victor Ronqui de Souza         | 202402392905        |
 
 ---
 
-## 11. FENETEC
-
-### Apresentação do Projeto
-
-#### Fotos do Evento
-
-
-
-### Lista de Visitantes
-
-
----
 
 ## 12. Carta de Apresentação
 
