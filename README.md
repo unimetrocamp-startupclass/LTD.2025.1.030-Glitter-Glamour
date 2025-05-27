@@ -17,11 +17,10 @@ Um e-commerce de roupas
 - [7. Resultados](#7-resultados)  
 - [8. Conclusão](#8-conclusão)  
 - [9. Homologação do MVP](#9-homologação-do-mvp)  
-- [10. Divulgação](#10-divulgação)  
-- [11. FENETEC](#11-fenetec)  
-- [12. Carta de Apresentação](#12-carta-de-apresentação)  
-- [13. Carta de Autorização](#13-carta-de-autorização)  
-- [14. Relato Individual do Processo](#14-relato-individual-do-processo)
+- [10. Divulgação](#10-divulgação)    
+- [11. Carta de Apresentação](#11-carta-de-apresentação)  
+- [12. Carta de Autorização](#12-carta-de-autorização)  
+- [13. Relato Individual do Processo](#13-relato-individual-do-processo)
 
 ---
 
@@ -430,9 +429,22 @@ Embora o sistema entregue as funcionalidades essenciais previstas no escopo, alg
 ## 9. Homologação do MVP
 
 ### Fotos da Homologação
+Após as entregas parciais, realizadas de acordo com os requisitos do sistema e o cronograma, o MVP foi apresentado em uma reunião realizada entre o time de desenvolvedores e o cliente.
 
+| Foto | Legenda |
+|------|---------|
+| ![Foto 1](https://github.com/user-attachments/assets/454e53d2-93c2-4175-922f-7556f033f58c)| Da esquerda para a direita: Angelica e Kelliane junto ao cliente, com a pagina inicial ao fundo. |
+| ![Foto 2](https://github.com/user-attachments/assets/ae7c2c1d-7826-4529-9d78-767a03fa09d6)| Apresentação do MVP realizada por Kelliane. |
+| ![Foto 3](https://github.com/user-attachments/assets/5e9d6777-ff9c-484c-810f-b210e918762d)| Participantes da homologação acompanhando a apresentação do MVP. |
 
 ### Lista de Presença
+
+
+| Nome                          | Papel       |
+|-------------------------------|-------------|
+| Andréa Maria Zaule Moreira                  | Cliente     |
+| Angelica Maria Zaule Moreira                | Desenvolvedor |
+| Kelliane Vieira dos Santos                  | Desenvolvedora |
 
 
 ---
@@ -482,25 +494,26 @@ Embora o sistema entregue as funcionalidades essenciais previstas no escopo, alg
 ---
 
 
-## 12. Carta de Apresentação
+## 11. Carta de Apresentação
 
-
-
----
-
-## 13. Carta de Autorização
-
-
+📄 [Visualizar PDF da Carta de Apresentação](https://drive.google.com/file/d/1mL-wX8V87_i_WaiumTmRYGTf2vcOc2eX/view?usp=sharing)
 
 ---
 
-## 14. Relato Individual do Processo
+## 12. Carta de Autorização
 
-- **Nome do aluno 1:** 
-  - *Relato pessoal sobre o processo.*
+📄 [Visualizar PDF da Carta de Autorização](https://drive.google.com/file/d/1JoQ1oL5cpPqLpTJZfGS4TLhZL1Qi4KPX/view?usp=sharing)
 
-- **Nome do aluno 2:** 
-  - *Relato pessoal sobre o processo.*
+---
+
+## 13. Relato Individual do Processo
+
+- **Angelica Moreira:** 
+  - O processo de construção do software foi uma experiência desafiadora e enriquecedora. Trabalhar com um cliente real nos motivou a entender de forma mais profunda as reais necessidades do usuário final, o que exigiu empatia, escuta ativa e capacidade de adaptação. Durante o desenvolvimento, aplicamos metodologias ágeis que facilitaram a organização e a divisão de tarefas entre os membros da equipe. Aprendemos muito sobre trabalho em equipe, responsabilidade com prazos e a importância de manter uma comunicação clara com o cliente.
+
+- **Kelliane Vieira:** 
+  - Participar do desenvolvimento deste projeto foi uma experiência muito enriquecedora, pois envolveu criar uma solução digital para uma cliente real: uma lojista de roupas que tem  pouca familiaridade com tecnologia, mas com o desejo de expandir suas vendas para o meio online. O nosso principal desafio foi construir um sistema acessível, simples e eficiente. No backend, utilizamos tecnologias como Express, TypeORM, PostgreSQL, JWT e Bcrypt para garantir segurança e organização dos dados. No frontend, aplicamos React, com Webpack, Babel e CSS, sempre com foco em usabilidade. O design foi totalmente desenvolvido no Figma, buscando sempre uma interface clara e intuitiva.
+Trabalhamos diretamente na construção das funcionalidades principais, como o cadastro de produtos, visualização de pedidos e painel administrativo, sempre pensando na experiência da nossa cliente. Foi necessário adaptar a linguagem visual e funcional do sistema para torná-lo acessível a alguém que possui  pouca experiência digital. Esse projeto me ensinou a importância de ouvir o cliente, adaptar soluções à realidade do usuário final e equilibrar aspectos técnicos com empatia. Mais do que desenvolver um sistema, ajudamos a cliente a dar um passo importante na digitalização do seu negócio e futuramente  expandir ainda mais seu e-commerce conforme ela for se familiarizando com esse meio tecnológico.
 
 
 
